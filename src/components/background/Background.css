@@ -1,0 +1,11 @@
+.background-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
