@@ -1,11 +1,11 @@
-import Background from './components/background/Background';
-import Screen from './components/screen/Screen';
-import TodayWeather from './components/today-weather/TodayWeather';
-import ButtonArea from './components/button-area/ButtonArea';
-import WeatherInfo from './components/weatherInfo/WeatherInfo';
-import HourlyForecast from './components/hourlyForecast/HourlyForecast';
-import ChanceOfRain from './components/chanceOfRain/ChanceOfRain';
-import SunRiseSet from './components/sunRiseSet/SunRiseSet';
+import Background from './components/Background/Background';
+import Screen from './components/Screen/Screen';
+import TodayWeather from './components/TodayWeather/TodayWeather';
+import ButtonArea from './components/DaysSelection/DaysSelection';
+import WeatherInfo from './components/WeatherInfo/WeatherInfo';
+import HourlyForecast from './components/HourlyForecast/HourlyForecast';
+import ChanceOfRain from './components/RainChance/RainChance';
+import SunRiseSet from './components/SunCycle/SunCycle';
 
 import {useState, useEffect} from 'react';
 import { fetchCompleteWeather } from './services/api';

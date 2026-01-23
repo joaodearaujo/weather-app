@@ -1,4 +1,4 @@
-import './SunRiseSet.css';
+import './SunCycle.css';
 
 const SunRiseSetCard = ({hour}) => {
     return (

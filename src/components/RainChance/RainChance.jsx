@@ -1,4 +1,4 @@
-import './ChanceOfRain.css'
+import './RainChance.css'
 
 const ChangeOfRainPercent = ({ pop }) => {
     const percentage = Math.round(pop * 100);

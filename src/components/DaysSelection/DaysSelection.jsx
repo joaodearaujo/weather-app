@@ -1,4 +1,4 @@
-import './ButtonArea.css'
+import './DaysSelection.css'
 
 const ButtonPeriod = ({period}) => {
     return  <button className='bp_button'>{period}</button>
