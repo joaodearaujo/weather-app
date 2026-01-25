@@ -1,18 +1,5 @@
 import './WeatherInfo.css'
-
-const WeatherInfoCard = ({ label, value, img }) => {
-    return(
-        <div className="wi-card">
-            <div className="wi-card__icon-background">
-                <img className='wi-card__icon' src={`/src/assets/images/${img}.png`} alt="" />
-            </div>
-            <div className='wi-card__side-text-container'>
-                <p className='wi-card__label'>{label}</p>
-                <p className='wi-card__value'>{value}</p>
-            </div>
-        </div>
-    )
-}
+import SmallCards from '../SmallCard/SmallCard';
 
 const WeatherInfo = ({data}) => {
 
@@ -21,18 +8,17 @@ const WeatherInfo = ({data}) => {
     const infoData = [
         { 
             label: 'Wind Speed', 
-            // Agora acessamos direto do data, que já é o current
             value: `${data.wind_speed ?? 0} m/s`,
             img: 'wind' 
         },
         { 
-            label: 'Rain Chance', 
-            value: `${data.clouds ?? 0}%`,
+            label: 'Humidity', 
+            value: `${data.humidity ?? 0}%`,
             img: 'rain' 
         },
         { 
             label: 'Pressure', 
-            value: `${data.pressure ?? 0} hPa`, // ?? serve para caso o valor da esquerda seja nulo ou indefinido, seja posto 0 no lugar desse valor
+            value: `${data.pressure ?? 0} hPa`, 
             img: 'pressure' 
         },
         { 
@@ -44,12 +30,12 @@ const WeatherInfo = ({data}) => {
 
     return(
         <div className="weather-info-container">
-            {infoData.map((data, index) =>
-                <WeatherInfoCard 
+            {infoData.map((info, index) =>
+                <SmallCards 
                     key={index}
-                    label={data.label}
-                    value={data.value}
-                    img={data.img}
+                    label={info.label}
+                    value={info.value}
+                    img={info.img}
                 />
             )}
         </div>

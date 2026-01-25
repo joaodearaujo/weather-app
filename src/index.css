@@ -8,6 +8,7 @@
   --tw-text-color: #fff;
   --bp-bg-color: #e0b6ff;
   --wi-bg-color: #ebdeff;
+  --bd-radius: 2.5em;
 }
 
 html {
@@ -18,7 +19,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
-  font-family: Poppins, sans-serif;
+  /* border: 0.1em solid red; */
+  font-family: Google Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

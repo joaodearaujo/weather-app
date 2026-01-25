@@ -1,21 +1,11 @@
 import './SunCycle.css';
-
-const SunRiseSetCard = ({hour}) => {
-    return (
-        <div className="rssd-container">
-                <div className='rssd-container__text-container'>
-                <p className='rssd-container__label'>Sunrise</p>
-                <p className='rssd-container__value'>{hour} AM</p>
-            </div>
-        </div>
-    )
-}
+import SmallCard from '../SmallCard/SmallCard';
 
 const SunRiseSet = ({data}) => {
     return (
         <div className="rss-container">
-    <SunRiseSetCard hour={new Date(data.sunrise * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} />
-    <SunRiseSetCard hour={new Date(data.sunset * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} /> 
+    <SmallCard label="Sunset" img={'clouds'} value={new Date(data.sunrise * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} />
+    <SmallCard label="Sunrise" img={'clouds'} value={new Date(data.sunset * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} /> 
         </div>
     )
 }

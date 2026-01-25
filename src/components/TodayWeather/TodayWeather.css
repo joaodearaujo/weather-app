@@ -1,113 +1,21 @@
 .tw-container {
-    width: 100%;
-    min-width: 412px;
-    min-height: 280px;
-    padding: 15px 20px;
-    gap: 20px;
-    border-radius: 35px;
+    width: 92%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-image: linear-gradient(180deg, var(--bp-bg-color) 50%, var(--screen-bg-color) 100%);
+    align-items: flex-start;
+    background-image: linear-gradient(145deg, #654ea3, #eaafc8);
+    padding: 2em;
+    border-radius: 2.5em;
 }
-
-/* 
-======================
-        HEADER
-======================
-*/
-
-.tw-container__header {
-    width: 90%;
-    max-width: 368px;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #cf7ae0; 
-    border-radius: 20px;
-    padding: 10px;
-    position: fixed;
-    z-index: 1000;
-}
-
-.tw-container__search {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.tw-container__input {
-    width: 100%;
-    border-radius: 20px;
-    padding: 6px 35px 6px 12px;
-    font-weight: 300;
-    color: var(--tw-text-color);
-    outline: none;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.6); 
-}
-
-
-.tw-container__input::placeholder {   
-    color: rgba(255, 255, 255, 0.8);
-    font-family: Poppins;
-    font-weight: 300;
-}
-
-.tw-container__city {
-    color: var(--tw-text-color);
-    font-size: 20px;
-    font-weight: 300;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 45%;
-}
-
-.tw-container__button {
-    position: absolute;
-    right: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background-color: #f4f5ff;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.tw-container__button:hover {
-    background-color: #ffffff;
-}
-
-.tw-container__search-icon{
-    width: 12px;
-}
-
-/* 
-======================
-        MAIN
-======================
-*/
 
 .tw-container__main {
-    margin-top: 80px;
     width: 100%;
     display: flex;
     align-items: center;
+    padding: 1em;
     justify-content: space-between;
-    padding: 10px 10px;
-    background: #a02cff26;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-
+    border-radius: var(--bd-radius);
  }
 
 .tw-container__temp-container {
@@ -115,12 +23,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.8em;
 }
 
 .tw-container__temp {
     color: var(--tw-text-color);
-    font-size: 80px;
+    font-size: 8em;
     font-weight: 600;
     line-height: 0.8;
 }
@@ -130,56 +38,30 @@
     white-space: nowrap;
     align-self: flex-start;
     color: var(--tw-text-color);    
-    font-size: 18px;
+    font-size: 1.8em;
     font-weight: 400;
-    letter-spacing: 0.15px;
 }
 
 .tw-container__weather {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 0.8em;
+    padding: 1.5em;
+    border-radius: var(--bd-radius);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .tw-container__weather-icon{
-    width: 107px;
-    height: 107px;
+    width: 10em;
+    width: 10em;
 }
 
 .tw-container__weather-description {
     text-transform: capitalize; 
+    text-wrap: inherit;
     color: var(--tw-text-color);
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 2em;
+    font-weight: 500;
 }
 
-
-
-/* ======================
-        FOOTER
-======================
-*/
-
-
-/* .tw-container__footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.tw-container__date {
-    color: var(--tw-text-color);
-    font-size: 17px;
-    font-weight: 400;
-}
-
-.tw-container__temp-variation {
-    color: var(--tw-text-color);
-    text-align: right;
-    font-size: 18px;
-    font-weight: 400;
-}
- */

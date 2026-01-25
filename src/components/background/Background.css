@@ -1,6 +1,6 @@
-.background-container {
+.background-main {
     width: 100vw;
-    height: 100dvh; /* 'dvh' Garante que cubra toda a tela  em qualquer dispostitivo*/
+    height: 100vh; /* 'dvh' Garante que cubra toda a tela  em qualquer dispostitivo*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,3 +8,4 @@
     overflow-y: hidden;
     background-color: var(--bg-color);
 }
+

@@ -1,12 +1,12 @@
 import Background from './components/Background/Background';
 import Screen from './components/Screen/Screen';
 import TodayWeather from './components/TodayWeather/TodayWeather';
-import ButtonArea from './components/DaysSelection/DaysSelection';
+import DaysSelection from './components/DaysSelection/DaysSelection';
 import WeatherInfo from './components/WeatherInfo/WeatherInfo';
 import HourlyForecast from './components/HourlyForecast/HourlyForecast';
 import ChanceOfRain from './components/RainChance/RainChance';
 import SunRiseSet from './components/SunCycle/SunCycle';
-
+import Search from './components/Search/Search';
 import {useState, useEffect} from 'react';
 import { fetchCompleteWeather } from './services/api';
 
@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const loadInitialWeather = async () => {
-      const data = await fetchCompleteWeather("Manaus");
+      const data = await fetchCompleteWeather("Tokyo");
       setWeatherData(data);
       setLoading(false);  
     };
@@ -41,17 +41,22 @@ function App() {
   return (
       <Background>
         <Screen>
-          <TodayWeather 
-            data={weatherData.current} 
+          <Search 
             city={weatherData.timezone} 
             handleSearch={handleSearch}
             setCity={setCity}>
+          </Search>
+          
+          <TodayWeather 
+            data={weatherData.current}
+            city={weatherData.timezone}>
           </TodayWeather>
+          
 
-          <ButtonArea></ButtonArea>
+          <DaysSelection></DaysSelection>
           <WeatherInfo data={weatherData.current}></WeatherInfo>
           <HourlyForecast data={weatherData.hourly}></HourlyForecast>
-          <ChanceOfRain data={weatherData.daily}></ChanceOfRain>
+          <ChanceOfRain data={weatherData.hourly}></ChanceOfRain>
           <SunRiseSet data={weatherData.current}></SunRiseSet>
         </Screen>
       </Background>

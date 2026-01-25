@@ -1,19 +1,16 @@
 import './DaysSelection.css'
+import StandardButton from '../StandardButton/StandardButton';
 
-const ButtonPeriod = ({period}) => {
-    return  <button className='bp_button'>{period}</button>
-}
-
-const ButtonArea = () => {
-    const periods = ["Today", "Tomorrow", "10 days"];
+const DaysSelection = () => {
+    const periods = ["Today", "Next Seven Days"];
 
     return (
-        <div className="button-area-container">
+        <div className="days-selection-container">
             {periods.map((item, index) => (
-                <ButtonPeriod key={index} period={item}/>
+                <StandardButton key={index} buttonName={item}/>
             ))}
         </div>
     )
 }
 
-export default ButtonArea;
+export default DaysSelection;
