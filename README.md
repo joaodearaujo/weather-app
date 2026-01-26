@@ -1,16 +1,21 @@
-# React + Vite
+# Weather App 🌤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto pessoal de previsão do tempo desenvolvido com **React**. O objetivo central foi ir além do consumo de uma API, focando na implementação de um workflow real de front-end e numa arquitetura de CSS escalável.
 
-Currently, two official plugins are available:
+### Porquê este projeto?
+Decidi fugir de soluções prontas (como frameworks de CSS) para dominar o comportamento dos elementos no navegador. O foco foi entender como criar um layout que se adapta a qualquer ecrã sem "quebrar", utilizando propriedades nativas para garantir que o app seja leve, acessível e visualmente interessante.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Destaques Técnicos
+- **Estratégia Mobile-First:** O desenvolvimento começou focado na experiência mobile, utilizando Media Queries para expandir o layout de forma inteligente para desktops.
+- **Arquitetura de Componentes:** Divisão clara de responsabilidades entre componentes como `Screen`, `WeatherInfo` e `TodayWeather`, facilitando futuras manutenções e escalabilidade.
+- **Design Adaptativo com `em` e `rem`:** Uso rigoroso de unidades flexíveis para que a interface respeite o zoom do navegador e as preferências de acessibilidade do utilizador.
+- **Integração com OpenWeather API:** Manipulação de dados em tempo real, incluindo humidade, vento, pressão, índice UV, ciclo solar e probabilidade de chuva.
 
-## React Compiler
+## 📑Próximas atualizações
+- **Gráficos detalhados:** Haverá uma seção exclusiva para a visualização de gráficos comparativos.
+- **Histórico de localizações:** Será possível saber quais localizações foram visitadas.
+- **Gerador de tabelas:** Exportação de uma tabela com todos os dados sobre o clima.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
