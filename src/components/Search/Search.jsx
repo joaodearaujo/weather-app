@@ -12,7 +12,10 @@ const Search = ({handleSearch, setCity}) => {
                     onChange={(e) => setCity(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSearch()}/>
 
-                    <StandardButton buttonName={'Search'} style={{ width: 'auto'}}></StandardButton>
+                    <StandardButton 
+                        buttonName={'Search'} 
+                        style={{ width: 'auto'}}
+                        onClick={handleSearch}></StandardButton>
                 </div>
             </div>
     )

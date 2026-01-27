@@ -1,6 +1,7 @@
 .weather-info-container {
-    min-width: 368px;
+    min-width: 92%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 1.4em;
 }
+

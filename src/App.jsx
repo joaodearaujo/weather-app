@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const loadInitialWeather = async () => {
-      const data = await fetchCompleteWeather("Tokyo");
+      const data = await fetchCompleteWeather("Acre");
       setWeatherData(data);
       setLoading(false);  
     };
@@ -51,7 +51,6 @@ function App() {
             data={weatherData.current}
             city={weatherData.timezone}>
           </TodayWeather>
-          
 
           <DaysSelection></DaysSelection>
           <WeatherInfo data={weatherData.current}></WeatherInfo>

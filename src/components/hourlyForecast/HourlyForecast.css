@@ -9,6 +9,7 @@
    overflow-y: hidden; 
    scroll-behavior: smooth;
    outline: none;
+   align-self: center;
 }
 
 
@@ -17,10 +18,12 @@
 }
 
 .hf-card-container {
-    width: 6em;
+    width: 5em;
+    height: 11em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5em;
     padding: 1em; 
     border-radius: var(--bd-radius);
@@ -29,6 +32,7 @@
 
 .hf-card-container__hour {
     color: var(--tw-text-color);
+    white-space: nowrap;
     font-size: 1.2em;
     font-weight: 500;
 }

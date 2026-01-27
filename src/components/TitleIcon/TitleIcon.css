@@ -1,10 +1,10 @@
-.tittle-icon-container {
+.title-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.tittle-icon__background {
+.title-icon__background {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
     height: 4em;
 }
 
-.tittle-icon__icon {
+.title-icon__icon {
     width: 2em;
     height: 2em;
 }

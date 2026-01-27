@@ -1,10 +1,11 @@
 import './TodayWeather.css'
 import BigCard from '../BigCard/BigCard'
 
-const TodayWeather = ({data}) => {
+const TodayWeather = ({data, city}) => {
 
     return (        
             <div className="tw-container">
+                <h1 className='tw-container__city'>{city}</h1>
                 <div className="tw-container__main">
                     <div className="tw-container__temp-container">
                         <h1 className="tw-container__temp">{Math.round(data.temp)}°C</h1>

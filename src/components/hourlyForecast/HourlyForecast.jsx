@@ -15,14 +15,14 @@ const HourlyForecastCard = ({hour, temp, img}) => {
 const HourlyForecast = ({data}) => {
 
 
-    const infoTempHour = data.slice(0, 25).map((item, index) => ({
+    const infoTempHour = data.slice(0, 13).map((item, index) => ({
     hour: index === 0 ? 'Now' : `${index}h`, 
     temp: `${Math.round(item.temp ?? 0)}°C`,
     img: 'clouds',
   }));
 
     return (
-      <BigCard tittle={'Next 24 Hours Forecast'} img={'clock'}>
+      <BigCard title={'Hours Forecast (12h)'} img={'clock'}>
         <div className="hf-container__cards ">
             {infoTempHour.map((data, index) =>
 

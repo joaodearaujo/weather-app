@@ -1,14 +1,12 @@
 .screen-container {
-    width: 41.2em;
+    width: 42.5em;
     height: 89.2em;
     overflow-y: auto; 
     overflow-x: hidden;
-    gap: 20px;
-    
+    border-radius: var(--bd-radius);
+    gap: 2em;
+    border: 0.6em solid #000;
     background-color: var(--screen-bg-color);
-    border: 6px solid var(--screen-bd-color);
-    border-radius: 35px;
-
     display: flex;
     flex-direction: column;
     align-items: center;

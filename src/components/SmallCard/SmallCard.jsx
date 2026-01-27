@@ -1,10 +1,10 @@
 import './SmallCard.css'
-import TittleIcon from '../TittleIcon/TittleIcon';
+import TitleIcon from '../TitleIcon/TitleIcon';
 
 const SmallCard = ({ label, value, img }) => {
     return(
         <div className="small-card-container">
-            <TittleIcon img={img}></TittleIcon>
+            <TitleIcon img={img}></TitleIcon>
             <div className='small-card__side-text-container'>
                 <p className='small-card__label'>{label}</p>
                 <p className='small-card__value'>{value}</p>
