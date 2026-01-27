@@ -14,24 +14,18 @@ const HourlyForecastCard = ({hour, temp, img}) => {
 
 const HourlyForecast = ({data}) => {
 
-    const infoTempHour = [
-        {hour:'Now', temp:`${Math.round(data[0].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'10 AM', temp:`${Math.round(data[10].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'11 AM', temp:`${Math.round(data[11].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'12 PM', temp:`${Math.round(data[12].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'1 PM', temp:`${Math.round(data[13].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'2 PM', temp:`${Math.round(data[14].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'3 PM', temp:`${Math.round(data[15].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'3 PM', temp:`${Math.round(data[15].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'3 PM', temp:`${Math.round(data[15].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'3 PM', temp:`${Math.round(data[15].temp) ?? 0}°C`, img:'clouds'},
-        {hour:'3 PM', temp:`${Math.round(data[15].temp) ?? 0}°C`, img:'clouds'},
-    ];
+
+    const infoTempHour = data.slice(0, 25).map((item, index) => ({
+    hour: index === 0 ? 'Now' : `${index}h`, 
+    temp: `${Math.round(item.temp ?? 0)}°C`,
+    img: 'clouds',
+  }));
 
     return (
-      <BigCard tittle={'Hourly Forecast'} img={'clock'}>
+      <BigCard tittle={'Next 24 Hours Forecast'} img={'clock'}>
         <div className="hf-container__cards ">
             {infoTempHour.map((data, index) =>
+
                             <HourlyForecastCard
                                 key={index}
                                 hour={data.hour}
