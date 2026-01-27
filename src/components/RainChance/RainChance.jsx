@@ -3,7 +3,7 @@ import BigCard from '../BigCard/BigCard'
 
 
 const ChangeOfRainPercent = ({pop, hour}) => {
-    const percentage = Math.round(pop);
+    const percentage = pop;
 
     return (
         <div className="crp-container">
@@ -21,25 +21,19 @@ const ChangeOfRainPercent = ({pop, hour}) => {
 
 const ChanceOfRain = ({ data }) => {
     
-   const infoRainChance = [
-        {hour:'Now'},
-        {hour:'Now'},
-        {hour:'Now'},
-        {hour:'Now'},
-        {hour:'Now'},
-        {hour:'Now'},
-    ];
-
-    const pop = data[0].humidity;
+   const infoRainChance = data.slice(0, 13).map((item, index) => ({
+        hour: index === 0 ? 'Now' : `${index}h`,
+        pop: `${Math.round((item.pop * 100 ))}`
+   }));
 
     return (
-        <BigCard tittle={'Chance Of Rain'} img={'rain'}>
+        <BigCard title={'Chance Of Rain (12h)'} img={'rain'}>
              <div className="cr-container">
-                {infoRainChance.map((item, index) =>
+                {infoRainChance.map((data, index) =>
                     <ChangeOfRainPercent 
                     key={index}
-                    pop={pop}
-                    hour={item.hour} />
+                    pop={data.pop}
+                    hour={data.hour} />
                 )}
             </div>
         </BigCard>   
