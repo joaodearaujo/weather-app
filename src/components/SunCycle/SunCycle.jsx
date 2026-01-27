@@ -4,8 +4,8 @@ import SmallCard from '../SmallCard/SmallCard';
 const SunRiseSet = ({data}) => {
     return (
         <div className="rss-container">
-    <SmallCard label="Sunset" img={'clouds'} value={new Date(data.sunrise * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} />
-    <SmallCard label="Sunrise" img={'clouds'} value={new Date(data.sunset * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} /> 
+    <SmallCard label="Sunset" img={'sunrise'} value={new Date(data.sunrise * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} />
+    <SmallCard label="Sunrise" img={'sunset'} value={new Date(data.sunset * 1000).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })} /> 
         </div>
     )
 }

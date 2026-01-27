@@ -27,7 +27,7 @@ const ChanceOfRain = ({ data }) => {
    }));
 
     return (
-        <BigCard title={'Chance Of Rain (12h)'} img={'rain'}>
+        <BigCard title={'Chance Of Rain (12h)'} img={'rain chance'}>
              <div className="cr-container">
                 {infoRainChance.map((data, index) =>
                     <ChangeOfRainPercent 

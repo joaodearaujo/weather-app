@@ -9,12 +9,12 @@ const WeatherInfo = ({data}) => {
         { 
             label: 'Wind Speed', 
             value: `${data.wind_speed ?? 0} m/s`,
-            img: 'wind' 
+            img: 'wind info' 
         },
         { 
             label: 'Humidity', 
             value: `${data.humidity ?? 0}%`,
-            img: 'rain' 
+            img: 'humidity' 
         },
         { 
             label: 'Pressure', 

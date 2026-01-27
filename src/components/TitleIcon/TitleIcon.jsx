@@ -5,7 +5,7 @@ const TittleIcon = ({img}) => {
             
         <div className="title-icon-container">
             <div className="title-icon__background">
-                <img className='title-icon__icon' src={`/src/assets/images/${img}.png`} alt="title Icon" />
+                <img className='title-icon__icon' src={`./public/images/${img}.png`} alt="title Icon" />
             </div>
         </div>
     )

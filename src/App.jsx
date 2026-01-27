@@ -16,17 +16,18 @@ function App() {
 
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState("");
 
   const handleSearch = async () => {
     if (!city || city.trim() === "") return;
     const data = await fetchCompleteWeather(city);
     if (data) setWeatherData(data);
+    setCity("");
   };
 
   useEffect(() => {
     const loadInitialWeather = async () => {
-      const data = await fetchCompleteWeather("Acre");
+      const data = await fetchCompleteWeather("Tokyo");
       setWeatherData(data);
       setLoading(false);  
     };
@@ -36,6 +37,7 @@ function App() {
 
   if (loading) return <h1 className="loading-message">Loading...</h1>
 
+  
   console.log("Dados Completos da API:", weatherData);
 
   return (
@@ -49,7 +51,7 @@ function App() {
           
           <TodayWeather 
             data={weatherData.current}
-            city={weatherData.timezone}>
+            city={weatherData.cityName}>
           </TodayWeather>
 
           <DaysSelection></DaysSelection>
