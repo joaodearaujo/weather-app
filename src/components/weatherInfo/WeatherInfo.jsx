@@ -25,7 +25,7 @@ const WeatherInfo = ({data}) => {
             label: 'UV Index', 
             value: `${data.uvi ?? 0}`,
             img: 'uv' 
-        }
+        },
     ];  
 
     return(

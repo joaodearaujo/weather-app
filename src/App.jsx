@@ -20,12 +20,14 @@ function App() {
 
   const handleSearch = async () => {
     if (!city || city.trim() === "") return;
+
     const data = await fetchCompleteWeather(city);
+
     if (data) setWeatherData(data);
     setCity("");
   };
 
-  useEffect(() => {
+  useEffect(() => { //
     const loadInitialWeather = async () => {
       const data = await fetchCompleteWeather("Tokyo");
       setWeatherData(data);
@@ -36,12 +38,11 @@ function App() {
   }, []);
 
   if (loading) return <h1 className="loading-message">Loading...</h1>
-
   
   console.log("Dados Completos da API:", weatherData);
-
+  
   return (
-      <Background>
+    <Background>
         <Screen>
           <Search 
             city={weatherData.timezone} 

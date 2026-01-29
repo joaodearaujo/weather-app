@@ -7,7 +7,7 @@ export const fetchCompleteWeather = async (cityName) => {
     try {
         const geoResponse = await fetch(`${baseURL_Location}?q=${cityName}&limit=1&appid=${api_Key}`);
         
-        const [geoData] = await geoResponse.json();
+        const [geoData] = await geoResponse.json(); // geoData está dentro de uma par de chaves porque é uma atalho para selecionar somente o primeiro objeto do array entregue pela API.
 
         if (!geoData) return null;
 
@@ -23,4 +23,3 @@ export const fetchCompleteWeather = async (cityName) => {
         console.error("Erro no fluxo de API:", error);
     }
 }
-

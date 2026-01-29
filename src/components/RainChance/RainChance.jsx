@@ -21,7 +21,7 @@ const ChangeOfRainPercent = ({pop, hour}) => {
 
 const ChanceOfRain = ({ data }) => {
     
-   const infoRainChance = data.slice(0, 13).map((item, index) => ({
+   const infoRainChance = data.slice(0, 7).map((item, index) => ({
         hour: index === 0 ? 'Now' : `${index}h`,
         pop: `${Math.round((item.pop * 100 ))}`
    }));
