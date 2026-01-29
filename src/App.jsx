@@ -8,7 +8,7 @@ import ChanceOfRain from './components/RainChance/RainChance';
 import SunRiseSet from './components/SunCycle/SunCycle';
 import Search from './components/Search/Search';
 import {useState, useEffect} from 'react';
-import { fetchCompleteWeather } from './services/api';
+import { getCompleteWeather } from './services/api';
 
 import './App.css'
 
@@ -21,7 +21,7 @@ function App() {
   const handleSearch = async () => {
     if (!city || city.trim() === "") return;
 
-    const data = await fetchCompleteWeather(city);
+    const data = await getCompleteWeather(city);
 
     if (data) setWeatherData(data);
     setCity("");
@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => { //
     const loadInitialWeather = async () => {
-      const data = await fetchCompleteWeather("Tokyo");
+      const data = await getCompleteWeather("Tokyo");
       setWeatherData(data);
       setLoading(false);  
     };
