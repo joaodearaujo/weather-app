@@ -1,7 +1,10 @@
 import './HourlyForecast.css'
 import BigCard from '../BigCard/BigCard'
+import { HourlyForecastCardProps } from './HourlyForecast.type'
+import { HourlyForecastProps } from './HourlyForecast.type'
+import { HourlyWeather } from '../../Types/Weather'
 
-const HourlyForecastCard = ({hour, temp, img}) => {
+const HourlyForecastCard = ({hour, temp, img}: HourlyForecastCardProps) => {
     
     return (
         <div className="hf-card-container">
@@ -12,8 +15,7 @@ const HourlyForecastCard = ({hour, temp, img}) => {
         )
 }
 
-const HourlyForecast = ({data}) => {
-
+const HourlyForecast = ({data}:HourlyForecastProps) => {
 
     const infoTempHour = data.slice(0, 13).map((item, index) => ({
     hour: index === 0 ? 'Now' : `${index}h`, 

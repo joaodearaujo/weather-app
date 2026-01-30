@@ -1,7 +1,8 @@
 import './SmallCard.css'
 import TitleIcon from '../TitleIcon/TitleIcon';
+import { SmallCardProps } from './SmallCard.type';
 
-const SmallCard = ({ label, value, img }) => {
+const SmallCard = ({ label, value, img }: SmallCardProps) => {
     return(
         <div className="small-card-container">
             <TitleIcon img={img}></TitleIcon>

@@ -2,7 +2,7 @@ import './DaysSelection.css'
 import StandardButton from '../StandardButton/StandardButton';
 
 const DaysSelection = () => {
-    const periods = ["Today", "Next Seven Days"];
+    const periods: string[] = ["Today", "Next Seven Days"];
 
     return (
         <div className="days-selection-container">
@@ -11,6 +11,6 @@ const DaysSelection = () => {
             ))}
         </div>
     )
-}
+};
 
 export default DaysSelection;

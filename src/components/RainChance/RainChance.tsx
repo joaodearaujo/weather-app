@@ -1,8 +1,8 @@
 import './RainChance.css'
 import BigCard from '../BigCard/BigCard'
-
-
-const ChangeOfRainPercent = ({pop, hour}) => {
+import { ChangeOfRainPercentProps } from './RainChance.type';
+import { ChanceOfRainProps } from './RainChance.type';
+const ChangeOfRainPercent = ({pop, hour} : ChangeOfRainPercentProps) => {
     const percentage = pop;
 
     return (
@@ -19,7 +19,7 @@ const ChangeOfRainPercent = ({pop, hour}) => {
     );
 };
 
-const ChanceOfRain = ({ data }) => {
+const ChanceOfRain = ({data}: ChanceOfRainProps) => {
     
    const infoRainChance = data.slice(0, 13).map((item, index) => ({
         hour: index === 0 ? 'Now' : `${index}h`,

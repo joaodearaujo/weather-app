@@ -1,54 +1,10 @@
 import axios from 'axios';
+import { GeoLocation } from '../Types/Weather';
+import { WeatherResponse } from '../Types/Weather';
 
 const api_Key = import.meta.env.VITE_WEATHER_API_KEY;
 const baseURL_Location = "http://api.openweathermap.org/geo/1.0/direct";
 const baseURL_Weather = "https://api.openweathermap.org/data/3.0/onecall";
-
-// Definindo as interfaces
-
-interface AlertWeather {
-    description: string;
-    event: string;
-    start: number;
-}
-
-interface CurrentWeather {
-    feels_like: number;
-    wind_speed: number;
-    humidity: number;
-    pressure: number;
-    sunrise: number;
-    sunset: number;
-    uvi: number;
-    main: string;
-    description: string;
-}
-
-interface HourlyWeather {
-    feels_like: number;
-    wind_speed: number;
-    humidity: number;
-    pressure: number;
-    sunrise: number;
-    sunset: number;
-    pop: number;
-    uvi: number;
-    main: string;
-    description: string;
-}
-
-interface WeatherResponse {
-    alerts: AlertWeather[];
-    cityName: string;
-    current: CurrentWeather;
-    hourly: HourlyWeather[];
-}
-
-interface GeoLocation {
-    lat: number;
-    lon: number;
-    name: string;
-}
 
 export const getCompleteWeather = async (cityName: string) => {
     try {
@@ -57,7 +13,7 @@ export const getCompleteWeather = async (cityName: string) => {
 
         if (!geoResponse) return null; 
 
-        const [geoData] = geoResponse;  // Desestruturando o array geoResponse em geoResponse
+        const [geoData] = geoResponse;  // Desestruturando o array 
 
         const weatherResponse = await axios.get<WeatherResponse>(`${baseURL_Weather}?lat=${geoData.lat}&lon=${geoData.lon}&units=metric&exclude=minutely&appid=${api_Key}`)
         .then(res => res.data);
@@ -69,8 +25,6 @@ export const getCompleteWeather = async (cityName: string) => {
 
     } catch (error) {
         console.error('Algo deu errado:', error)
+        return null;
     }
-
-
-
 }

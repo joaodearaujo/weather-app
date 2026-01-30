@@ -1,11 +1,11 @@
-import './WeatherInfo.css'
+import './WeatherInfo.css';
 import SmallCards from '../SmallCard/SmallCard';
+import { WeatherInfoProps, InfoItem } from './WeatherInfo.type';
 
-const WeatherInfo = ({data}) => {
-
+const WeatherInfo = ({ data }: WeatherInfoProps) => {
     if (!data) return null;
 
-    const infoData = [
+    const infoData: InfoItem[] = [
         { 
             label: 'Wind Speed', 
             value: `${data.wind_speed ?? 0} m/s`,
@@ -28,18 +28,18 @@ const WeatherInfo = ({data}) => {
         },
     ];  
 
-    return(
+    return (
         <div className="weather-info-container">
-            {infoData.map((info, index) =>
+            {infoData.map((info, index) => (
                 <SmallCards 
                     key={index}
                     label={info.label}
                     value={info.value}
                     img={info.img}
                 />
-            )}
+            ))}
         </div>
-    )
+    );
 }
 
 export default WeatherInfo;

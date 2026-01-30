@@ -1,7 +1,8 @@
 import './Search.css';
 import StandardButton from '../StandardButton/StandardButton';
+import { SearchProps } from './Search.type';
 
-const Search = ({handleSearch, setCity}) => {
+const Search = ({handleSearch, setCity}: SearchProps) => {
     return (
         <div className="search-card">                
                 <div className='search-card__container'>

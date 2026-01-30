@@ -7,14 +7,13 @@ import HourlyForecast from './components/HourlyForecast/HourlyForecast';
 import ChanceOfRain from './components/RainChance/RainChance';
 import SunRiseSet from './components/SunCycle/SunCycle';
 import Search from './components/Search/Search';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { getCompleteWeather } from './services/api';
 import { WeatherResponse } from './Types/Weather';
 
-import './App.css'
+import './App.css';
 
 function App() {
-
   const [weatherData, setWeatherData] = useState<WeatherResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [city, setCity] = useState("");
@@ -24,7 +23,9 @@ function App() {
 
     const data = await getCompleteWeather(city);
 
-    if (data) setWeatherData(data);
+    if (data) {
+      setWeatherData(data);
+    }
     setCity("");
   };
 
@@ -36,33 +37,40 @@ function App() {
     };
 
     loadInitialWeather();
-  },[]);
+  }, []);
 
-  if (loading || !weatherData) return <h1 className="loading-message">Loading...</h1>
-  
   console.log("Dados Completos da API:", weatherData);
+  
+
+  if (loading || !weatherData) {
+    return <h1 className="loading-message">Loading...</h1>;
+  }
   
   return (
     <Background>
         <Screen>
           <Search 
             handleSearch={handleSearch}
-            setCity={setCity}>
-          </Search>
+            setCity={setCity} 
+          />
           
           <TodayWeather 
-            data={weatherData?.current}
-            city={weatherData?.cityName}>
-          </TodayWeather>
+            data={weatherData.current}
+            city={weatherData.cityName || "Unknown City"} 
+          />
 
-          <DaysSelection></DaysSelection>
-          <WeatherInfo data={weatherData?.current}></WeatherInfo>
-          <HourlyForecast data={weatherData?.hourly}></HourlyForecast>
-          <ChanceOfRain data={weatherData?.hourly}></ChanceOfRain>
-          <SunRiseSet data={weatherData?.current}></SunRiseSet>
+          <DaysSelection />
+
+          <WeatherInfo data={weatherData.current} />
+
+          <HourlyForecast data={weatherData.hourly} />
+          
+          <ChanceOfRain data={weatherData.hourly} />
+
+          <SunRiseSet data={weatherData.current} />
         </Screen>
       </Background>
-  )
+  );
 }
 
 export default App;
